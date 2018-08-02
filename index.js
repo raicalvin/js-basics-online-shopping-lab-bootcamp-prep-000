@@ -72,7 +72,7 @@ function placeOrder(cardNumber) {
     let confirmation = `Your total cost is $${totalPrice}, which will be charged to the card ${cardNumber}.`;
     cart.length = 0;
   } else {
-    return "Sorry, we don\'t have a credit card onfile for you.";
+    return "Sorry, we don\'t have a credit card on file for you.";
   }
 }
 
