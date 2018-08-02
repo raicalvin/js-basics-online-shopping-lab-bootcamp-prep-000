@@ -58,7 +58,7 @@ function total() {
 function removeFromCart(item) {
   // write your code here
   var indexOfItemToRemove = cart.map(function(obj) {return obj.itemName}).indexOf(item);
-  cart.
+  cart.splice(indexOfItemToRemove, 1);
 }
 
 function placeOrder(cardNumber) {
