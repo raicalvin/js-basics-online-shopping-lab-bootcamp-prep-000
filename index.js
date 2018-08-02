@@ -70,6 +70,7 @@ function placeOrder(cardNumber) {
   if (cardNumber != null) {
     let totalPrice = total();
     let confirmation = `Your total cost is $${totalPrice}, which will be charged to the card ${cardNumber}.`;
+    cart.length = 0;
   }
 }
 
