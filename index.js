@@ -69,7 +69,7 @@ function placeOrder(cardNumber) {
   // write your code here
   console.log(cardNumber);
   if (cardNumber !== undefined) {
-    let totalPrice = total();
+    let cartTotal = total();
     let confirmation = `Your total cost is $${cartTotal}, which will be charged to the card ${cardNumber}.`;
     cart.length = 0;
     console.log('The confirmation is: ' + confirmation);
