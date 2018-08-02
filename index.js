@@ -11,20 +11,59 @@ function setCart(c) {
 
 function addToCart(item) {
  // write your code here
+ let newItem = new Object();
+ newItem['itemName'] = item;
+ newItem['itemPrice'] = getRandomPrice();
+ cart.push(newItem);
+ return `${newItem['itemName']} has been added to your cart.`;
 }
 
 function viewCart() {
   // write your code here
+  if (!cart.length) {
+    return 'Your shopping cart is empty.'
+  } else {
+    let cartLength = cart.length;
+    let cartContents = 'In your cart, you have ';
+    let oxfordComma = '.';
+    for (let i = 0; i < cartLength; i++) {
+        if (cartLength === 1) {
+          cartContents += `${cart[i].itemName} at $${cart[i].itemPrice}${oxfordComma}`;
+        } else if (cartLength > 1) {
+          oxfordComma = ', ';
+          if (cartLength - i == 2) {
+            oxfordComma = ', and ';
+          } else {
+            oxfordComma = ', ';
+            if (cartLength - i === 1) {
+              oxfordComma = '.';
+            }
+          }
+          cartContents += `${cart[i].itemName} at $${cart[i].itemPrice}${oxfordComma}`;
+        }
+    }
+    return cartContents;
+  }
 }
 
 function total() {
   // write your code here
+  let totalPrice = 0;
+  for (let i = 0; i < cart.length; i++) {
+    totalPrice += cart[i].itemPrice;
+  }
+  return totalPrice;
 }
 
 function removeFromCart(item) {
   // write your code here
+  
 }
 
 function placeOrder(cardNumber) {
   // write your code here
+}
+
+function getRandomPrice() {
+  return Math.floor(Math.random() * (100 - 1)) + 1;
 }
