@@ -67,6 +67,7 @@ function removeFromCart(item) {
 
 function placeOrder(cardNumber) {
   // write your code here
+  console.log(cardNumber);
   if (cardNumber !== undefined) {
     let totalPrice = total();
     let confirmation = `Your total cost is $${totalPrice}, which will be charged to the card ${cardNumber}.`;
