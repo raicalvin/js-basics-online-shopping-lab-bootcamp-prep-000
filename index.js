@@ -73,7 +73,6 @@ function placeOrder(cardNumber) {
     let confirmation = `Your total cost is $${cartTotal}, which will be charged to the card ${cardNumber}.`;
     cart.length = 0;
     return confirmation;
-    console.log('The confirmation is: ' + confirmation);
   } else {
     return "Sorry, we don\'t have a credit card on file for you.";
   }
